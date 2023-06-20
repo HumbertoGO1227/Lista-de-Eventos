@@ -11,9 +11,9 @@ const Calendario = () => {
 
   // Carregar eventos salvos em localStorage
   useEffect(() => {
-    const eventosSalvos = localStorage.getItem("eventos");
-    if (eventosSalvos) {
-      setEventos(JSON.parse(eventosSalvos));
+    const eventosSalvos = JSON.parse(localStorage.getItem("eventos"));
+    if (eventosSalvos.length > 0) {
+      setEventos(eventosSalvos);
     }
   }, []);
 
