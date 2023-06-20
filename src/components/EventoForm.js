@@ -1,24 +1,38 @@
 import React from "react";
 
-const EventoForm = ({ novoEvento, setNovoEvento, dataAtual, setDataAtual, adicionarEvento, atualizarEvento, eventoEditando }) => {
+const EventoForm = ({
+  novoEvento,
+  setNovoEvento,
+  dataAtual,
+  setDataAtual,
+  adicionarEvento,
+  atualizarEvento,
+  eventoEditando
+}) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (eventoEditando) {
+      atualizarEvento();
+    } else {
+      adicionarEvento();
+    }
+  };
+
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Descrição do evento"
+        value={novoEvento}
+        onChange={(e) => setNovoEvento(e.target.value)}
+      />
       <input
         type="date"
         value={dataAtual}
         onChange={(e) => setDataAtual(e.target.value)}
       />
-      <input
-        type="text"
-        value={novoEvento}
-        onChange={(e) => setNovoEvento(e.target.value)}
-      />
-      {eventoEditando ? (
-        <button onClick={atualizarEvento}>Atualizar</button>
-      ) : (
-        <button onClick={adicionarEvento}>Adicionar</button>
-      )}
-    </div>
+      <button type="submit">{eventoEditando ? "Atualizar" : "Adicionar"}</button>
+    </form>
   );
 };
 

@@ -31,6 +31,7 @@ const Calendario = () => {
       };
       setEventos((prevEventos) => {
         const novosEventos = [...prevEventos, novoEventoObj];
+        localStorage.setItem("eventos", JSON.stringify(novosEventos));
         return novosEventos;
       });
       setNovoEvento("");
@@ -59,6 +60,7 @@ const Calendario = () => {
           }
           return evento;
         });
+        localStorage.setItem("eventos", JSON.stringify(eventosAtualizados));
         return eventosAtualizados;
       });
       setEventoEditando(null);
@@ -72,13 +74,10 @@ const Calendario = () => {
     setEventos((prevEventos) => {
       const eventosAtualizados = [...prevEventos];
       eventosAtualizados.splice(index, 1);
+      localStorage.setItem("eventos", JSON.stringify(eventosAtualizados));
       return eventosAtualizados;
     });
   };
-
-  useEffect(() => {
-    localStorage.setItem("eventos", JSON.stringify(eventos));
-  }, [eventos]);
 
   return (
     <div>
