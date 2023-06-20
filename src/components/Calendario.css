@@ -1,0 +1,82 @@
+/* components/Calendario.css */
+
+/* Estilos gerais */
+h2 {
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  li span {
+    margin-right: 10px;
+  }
+  
+  button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Formulário de evento */
+  form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  input {
+    margin-right: 10px;
+    padding: 5px;
+  }
+  
+  /* Botões de ação do formulário */
+  button[type="submit"] {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  button[type="submit"],
+  button[type="button"] {
+    padding: 5px 10px;
+    background-color: #ccc;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Botões de ação de eventos */
+  button {
+    background-color: #2196f3;
+    color: #fff;
+  }
+  
+  button:hover {
+    background-color: #0e87e8;
+  }
+  
+  /* Componente principal */
+  .App {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
